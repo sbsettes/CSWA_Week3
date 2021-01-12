@@ -1,0 +1,27 @@
+{{page-title "Calculator"}}
+<div class="grid-x grid-padding-x">
+  <form class="cell large-2 large-offset-5">
+    <div class="callout">
+      <h1>Calculator</h1>
+      <label>a
+        <Input type="number" @value={{this.a}} />
+      </label>
+      <label>b
+        <Input type="number" @value={{this.b}} />
+      </label>
+      <select onchange={{action "setOperation" value="target.value" }}>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+      </select>
+      <br>
+      <div class="text-right">
+        <button class="button" {{action 'calculator' }}>result</button>
+      </div>
+      <br>
+      {{this.history}}
+    </div>
+  </form>
+</div>
